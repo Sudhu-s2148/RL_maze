@@ -1,0 +1,20 @@
+# ── Learning settings ──
+
+#gamma = how much future rewards matter, alpha = learning speed
+gamma, alpha = 0.99, 0.2
+
+#T = starting temperature (high = very random), it shrinks by T_decay each episode until T_min
+T, T_decay, T_min = 5.0, 0.9999, 0.01
+
+# ── Rewards ──
+# R_wall is the number that marks a wall cell, so no normal cell should ever use it
+R_wall = -20
+R_cell = -5
+R_goal = 500
+
+# ── Run settings ──
+TOTAL_EPISODES = 1500    # how many episodes to train for
+TOTAL_MOVES    = 800     # max moves allowed per episode before it is cut off
+EPISODE_STEP   = 100     # only animate every EPISODE_STEP-th episode so training stays fast
+HOLD_SECONDS   = 3       # how long the heatmap stays on screen after each animated episode
+FPS            = 60      # animation speed (frames per second)
