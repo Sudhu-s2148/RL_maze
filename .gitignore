@@ -3,3 +3,4 @@ venv
 .venv
 .pptx
 .json
+__pycache__
