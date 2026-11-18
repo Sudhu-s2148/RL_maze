@@ -1,7 +1,22 @@
 import pygame
 import math
-import maze_20x20_rooms as values
+import argparse
+import importlib
 import Q_learning_functions as Q
+
+MAZES = {
+    "5x4": "maze_5x4",
+    "20x20-backtracker": "maze_20x20_bactracker",
+    "20x20-rooms": "maze_20x20_rooms",
+    "50x50-rooms": "maze_50x50_rooms",
+}
+
+parser = argparse.ArgumentParser(description="Run Q-learning on a chosen maze")
+parser.add_argument("--maze", choices=MAZES.keys(), default="5x4",
+                    help="which maze to load (default: %(default)s)")
+args = parser.parse_args()
+
+values = importlib.import_module(MAZES[args.maze])
 
 # ── Settings ───────────────────────────────────────────────────────────────
 TILE_SIZE      = values.tile_size

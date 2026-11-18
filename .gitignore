@@ -1,6 +1,6 @@
 old_files
 venv
 .venv
-.pptx
-.json
+*.pptx
+*.json
 __pycache__
